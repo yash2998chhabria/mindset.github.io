@@ -49,7 +49,21 @@
 			  },
 			],
 		  });
-		  chart.render();
+      chart.render();
+      function update(){
+				document.getElementById('update_btn').style.display = 'none';
+				document.getElementById('piechart').style.display = 'block';
+                var v1=0;
+                var v2=1;
+                var v3=2;
+                chart.options.data[0].dataPoints[v1].y = {{ zeros }}; 
+                chart.options.data[0].dataPoints[v2].y = {{ ones }};
+                chart.options.data[0].dataPoints[v3].y = {{ twos }};  // you can update value here   
+                    chart.render();
+
+            }
+            var button = document.getElementById( "button" );
+            button.addEventListener( "click",  update);
 		};
 	  </script>
   </head>
@@ -67,7 +81,8 @@
       <nav class="header-nav">
         <ul class="main-menu">
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about-us.html">Confession</a></li>
+		  <li><a href="about-us.html">About us</a></li>
+		  <li><a href="about-us.html">Confession</a></li>
           <!--li><a href="#">Buy</a></li>
           <li>
             <a href="#">Pages</a>
@@ -121,7 +136,7 @@
 			  </div-->
               <div class="search-input">
                 <input type="text" placeholder="How do you feel?" />
-                <button class="site-btn">Search</button>
+                <button class="update_btn">Search</button>
               </div>
               <p style="font-size: large;">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -145,7 +160,7 @@
 			  </div>
 			<div id="chartContainer"></div>
 		  </div>
-		  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		  <br><br><br><br><br><br><br><br><br><br><br><br><br>
 	
 	
     <!-- Intro Section end -->
@@ -269,7 +284,7 @@
       <div class="loan-warp">
         <div class="container">
           <div class="section-title text-white">
-            <h2>Contact us Via email</h2>
+            <h2 style="font-size: 35px;">Contact us Via email</h2>
             <p>
               Donec eget efficitur ex. Donec eget dolor vitae eros feugiat
               tristique id vitae massa. Proin vulputate congue rutrum. Fusce
@@ -300,7 +315,7 @@
           </div>
           <div class="col-lg-7 order-lg-1">
             <div class="about-text">
-              <h2>Seller Success Stories (some more random stuff if needed)</h2>
+              <h2 style="font-size: 35px;">Seller Success Stories (some more random stuff if needed)</h2>
               <p>
                 Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu
                 ad litora. Donec eget efficitur ex. Donec eget dolor vitae eros
