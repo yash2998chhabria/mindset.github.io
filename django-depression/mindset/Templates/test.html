@@ -1,0 +1,19 @@
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Test Submission</h2>
+
+<form action="databased" method="POST" id="confession">
+  <label>Feels:</label><br>
+  {% csrf_token %}
+  {{ form|crispy }}
+  <input type="submit" form="confession" value="Submit">
+</form> 
+
+<p>{{message}}</p>
+
+</body>
+</html>
